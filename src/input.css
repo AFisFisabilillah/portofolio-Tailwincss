@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-line{
+  @apply w-[30px] h-[3px] block bg-dark my-1.5  
+}
+
+.fixed-nav{
+  @apply z-[99] fixed bg-white opacity-90
+  
+}
+.mark::after{
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top-width: 2px;
+  border-color: #00BFFF; /* cyan-400 */
+  display: block;
+  transform:scale(0) ;
+  transition: 0.3s ;
+}
+.menu-active>span:nth-child(1){
+  @apply origin-top-left rotate-45 -translate-y-[2.6px]
+}
+.menu-active>span:nth-child(2){
+  @apply scale-0
+}
+.menu-active>span:nth-child(3){
+  @apply origin-bottom-left -rotate-45
+}
+.fixed-nav{
+  backdrop-filter: blur(5px);
+}
+.nav-active{
+  @apply scale-100
+}
